@@ -44,10 +44,16 @@ let updateQuote = () => {
       },
       1000
     );
+    
+    //Twitter integration
+    $('#tweet-quote').attr(
+      'href',
+      'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
+        encodeURIComponent('"' + quote + '" ' + cite)
+    );
+
   }
-  //Twitter integration
-
-
+  
 button.addEventListener("click", updateQuote);
 
 $(document).ready(function () {
