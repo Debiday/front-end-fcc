@@ -1,6 +1,3 @@
-// Powered by Quotable
-// https://github.com/lukePeavey/quotable
-
 const button = document.querySelectorAll(".button")[1];
 const quote = document.querySelector(".quote-text");
 const cite = document.querySelector(".quote-author");
@@ -15,7 +12,8 @@ let colors = [
 let data; 
 
 let updateQuote = () => {
-
+  // Powered by Quotable
+  // https://github.com/lukePeavey/quotable
   axios.get("https://api.quotable.io/random").then((res) => {
     console.log(res.data);
     data = res.data;
@@ -23,7 +21,7 @@ let updateQuote = () => {
     cite.innerHTML = res.data.author;
   });
 
-    //animation
+    //animation 
     $('.quote-text').animate({ opacity: 0.5 }, 500, function () {
       $(this).animate({ opacity: 1 }, 500);
     });
@@ -52,5 +50,6 @@ let updateQuote = () => {
 
 button.addEventListener("click", updateQuote);
 
-// updateQuote();
-
+$(document).ready(function () {
+  updateQuote()
+  });
